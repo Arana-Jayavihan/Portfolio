@@ -21,7 +21,7 @@ const Navbar = () => {
                     ['Home', 'About', 'Skills', 'Work', 'Contact'].map((item, index) => (
                         <li className='app__flex p-text' key={index}>
                             <div></div>
-                            <a href={`#${item}`}>{item}</a>
+                            <a href={`#${item}`}>{item}</a>  
                         </li>
                     ))
                 }
@@ -31,8 +31,8 @@ const Navbar = () => {
                 {
                     toggle && (
                         <motion.div
-                            whileInView={{ c: [300, 0] }}
-                            transition={{ duration: 0.85, ease: 'easeOut' }}
+                            whileInView={{ x: [300, 0] }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
                         >
                             <HiX onClick={() => setToggle(false)} />
                             <ul>
