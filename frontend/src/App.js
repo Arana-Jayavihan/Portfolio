@@ -1,24 +1,28 @@
 import React from 'react';
-
+import { useLocation } from "react-router-dom";
 // Containers
 import { About, Feedback, Footer, Header, Skills, Work } from './containers'
 
-// Coponants
-import { Navbar } from './components';
-
 // CSS
 import './App.scss'
+import Layout from './containers/Layout';
 
 const App = () => {
+	let location = useLocation().hash
+	location = location.split('#')[1]
+	console.log(location)
+
 	return (
 		<div className='app'>
-			<Navbar />
-			<Header />
-			<About />
-			<Work />
-			<Skills />
-			<Feedback />
-			<Footer />
+			<Layout idName={location}>
+				<Header />
+				<About />
+				<Skills />
+				<Work />
+				<Feedback />
+				<Footer />
+			</Layout>
+
 		</div>
 	);
 }

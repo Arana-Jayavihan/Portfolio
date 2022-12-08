@@ -21,6 +21,10 @@ export default{
               hotspot: true,
             },
         },
-        
+        {
+            name: 'percentage',
+            title: 'Percentage',
+            type: 'string'
+        }
     ]
 }

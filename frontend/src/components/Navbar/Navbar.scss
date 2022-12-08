@@ -5,10 +5,10 @@
     align-items: center;
     padding: 1rem 2rem;
     background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     position: fixed;
+    top: 0;
     z-index: 2;
 }
 
@@ -50,7 +50,7 @@
         }
 
         a {
-            color: var(--gray-color);
+            color: var(--white-color);
             text-decoration: none;
             flex-direction: column;
             text-transform: uppercase;

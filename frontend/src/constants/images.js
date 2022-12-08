@@ -35,7 +35,13 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import arana2 from '../assets/arana2.png'
+import gmail from '../assets/gmail.svg'
+import ubuntu from '../assets/ubuntu-4.svg'
+
 export default {
+  ubuntu,
+  gmail,
   email,
   mobile,
   api,
@@ -69,4 +75,5 @@ export default {
   nb,
   skype,
   spotify,
+  arana2
 };

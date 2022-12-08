@@ -2,14 +2,19 @@
 
 :root {
   --font-base: "DM Sans", sans-serif;
-
   --primary-color: #edf2f8;
-  --secondary-color: #313bac;
+  --secondary-color: #28a745;
   --black-color: #030303;
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+  --gray-2: #212529;
+  --gray-3: #343a40;
+  --gray-4: #3d4349;
+  --gray-text: #909294;
+  --green-2: #28a745;
+
 }
 
 * {
@@ -17,4 +22,15 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }
