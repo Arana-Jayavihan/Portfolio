@@ -10,7 +10,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 2rem;
-    overflow: hidden;
+    overflow-y: scroll;
   }
 
   .app__profiles::-webkit-scrollbar {

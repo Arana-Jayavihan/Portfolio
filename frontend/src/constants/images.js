@@ -26,6 +26,7 @@ import about04 from '../assets/about04.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import cover from '../assets/cover-resized.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -38,8 +39,15 @@ import spotify from '../assets/spotify.png';
 import arana2 from '../assets/arana2.png'
 import gmail from '../assets/gmail.svg'
 import ubuntu from '../assets/ubuntu-4.svg'
+import cover2 from '../assets/cover-2.webp'
+import bash from '../assets/bash-1.svg'
+import logo4 from '../assets/logo-4.png'
 
 export default {
+  bash,
+  logo4,
+  cover2,
+  cover,
   ubuntu,
   gmail,
   email,

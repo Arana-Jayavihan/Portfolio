@@ -10,7 +10,6 @@ import Layout from './containers/Layout';
 const App = () => {
 	let location = useLocation().hash
 	location = location.split('#')[1]
-	console.log(location)
 
 	return (
 		<div className='app'>
@@ -19,7 +18,7 @@ const App = () => {
 				<About />
 				<Skills />
 				<Work />
-				<Feedback />
+				{/* <Feedback /> */}
 				<Footer />
 			</Layout>
 

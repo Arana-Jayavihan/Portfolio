@@ -1,17 +1,17 @@
 import React from 'react';
-import { BsTwitter, BsInstagram } from 'react-icons/bs';
+import { BsGithub, BsInstagram } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 
 const SocialMedia = () => (
   <div className="app__social">
     <div>
-      <BsTwitter />
+      <FaFacebookF onClick={() => window.open("https://www.facebook.com/profile.php?id=100011115035680", "_blank")} />
     </div>
     <div>
-      <FaFacebookF />
+      <BsGithub onClick={() => window.open("https://github.com/Arana-Jayavihan", "_blank")} />
     </div>
     <div>
-      <BsInstagram />
+      <BsInstagram onClick={() => window.open("https://www.instagram.com/_.arana._/", "_blank")} />
     </div>
   </div>
 );

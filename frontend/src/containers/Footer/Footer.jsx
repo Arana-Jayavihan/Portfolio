@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <div className="app__footer-card" style={{ backgroundColor: 'GrayText' }}>
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+94 07 415 2204" className="p-text" style={{ color: '#000000' }}>+94 07 415 2204</a>
+          <a href="tel:+94 76 415 2204" className="p-text" style={{ color: '#000000' }}>+94 76 415 2204</a>
         </div>
       </div>
       {!isFormSubmitted ? (
@@ -83,5 +83,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer, 'app__footer'),
   'contact',
-  'app__whitebg',
+  'app__primarybg',
 );

@@ -13,9 +13,9 @@ const Navbar = () => {
 
     return (
         <nav className='app__navbar'>
-            <div className='app__navbar-logo'>
-                <img src={images.arana2} alt='logo' />
-            </div>
+            {/* <div className='app__navbar-logo'>
+                <img src={images.logo4} alt='logo' />
+            </div> */}
             <ul className='app__navbar-links'>
                 {
                     ['home', 'about', 'skills', 'work', 'feedback', 'contact'].map((item, index) => (
@@ -37,7 +37,7 @@ const Navbar = () => {
                             <HiX onClick={() => setToggle(false)} />
                             <ul>
                                 {
-                                    ['Home', 'About', 'Skills', 'Work', 'feedback', 'Contact'].map((item, index) => (
+                                    ['home', 'about', 'skills', 'work', 'feedback', 'contact'].map((item, index) => (
                                         <li key={index}>
                                             <a href={`#${item}`} onClick={() => setToggle(false)} >{item}</a>
                                         </li>

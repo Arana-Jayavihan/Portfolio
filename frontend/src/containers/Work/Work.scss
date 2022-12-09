@@ -47,8 +47,9 @@
   
   .app__work-portfolio {
     display: flex;
+    height: 60vh;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow-y: scroll;
     justify-content: center;
     align-items: center;
   

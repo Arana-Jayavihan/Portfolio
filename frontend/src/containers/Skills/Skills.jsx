@@ -10,13 +10,6 @@ import VisibilitySensor from "react-visibility-sensor";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const number = 283
-const progress = (percent) => {
-  setTimeout(function () {
-    return percent
-  }, 1000)
-}
-
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
@@ -45,6 +38,7 @@ const Skills = () => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
+              style={{ overflow: 'visible' }}
               key={skill.name}
             >
               <VisibilitySensor>
@@ -56,41 +50,20 @@ const Skills = () => {
                         id='progress'
                         value={percent}
                         styles={{
-                          // Customize the root svg element
                           root: {},
-                          // Customize the path, i.e. the "completed progress"
                           path: {
-                            // Path color
                             stroke: `#28a745`,
-                            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                             strokeLinecap: 'round',
-                            // Customize transition animation
                             transition: 'stroke-dashoffset 2s ease 0s',
+                            transform: 'rotate(1turn)',
+                            transformOrigin: 'center center',
+                          },
 
-                            // Rotate the path
-                            transform: 'rotate(1turn)',
-                            transformOrigin: 'center center',
-                          },
-                          // Customize the circle behind the path, i.e. the "total progress"
                           trail: {
-                            // Trail color
                             stroke: '#d6d6d6',
-                            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                             strokeLinecap: 'round',
-                            // Rotate the trail
                             transform: 'rotate(1turn)',
                             transformOrigin: 'center center',
-                          },
-                          // Customize the text
-                          text: {
-                            // Text color
-                            fill: '#f88',
-                            // Text size
-                            fontSize: '16px',
-                          },
-                          // Customize background - only used when the `background` prop is true
-                          background: {
-                            fill: '#3e98c7',
                           },
                         }}>
                         <div

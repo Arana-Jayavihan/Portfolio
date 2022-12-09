@@ -89,7 +89,7 @@
       border: none;
       border-radius: 7px;
 
-      background-color: var(--gray-3);
+      background-color: var(--gray-2);
       color: var(--white-color);
       font-family: var(--font-base);
       outline: none;
@@ -116,11 +116,12 @@
     margin: 2rem 0 0 0;
     font-family: var(--font-base);
 
-    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .5s ease-in-out;
     cursor: pointer;
 
     &:hover {
-      background-color: #2430af;
+      background-color: var(--white-color);
+      color: var(--secondary-color);
     }
   }
 

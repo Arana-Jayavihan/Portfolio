@@ -41,7 +41,35 @@ export default {
         {
           name: 'tag',
           title: 'Tag',
-          type: 'string'
+          type: 'string',
+          options: {
+            list: [
+              {
+                title: 'React JS',
+                value: 'React JS'
+              },
+              {
+                title: 'Web App',
+                value: 'Web App'
+              },
+              {
+                title: 'Python',
+                value: 'Python'
+              },
+              {
+                title: 'Pen Test',
+                value: 'Pen Test'
+              },
+              {
+                title: 'UI/UX',
+                value: 'UI/UX'
+              },
+              {
+                title: 'All',
+                value: 'All'
+              },
+            ]
+          }
         }
       ]
     },
