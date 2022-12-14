@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 // Containers
 import { About, Feedback, Footer, Header, Skills, Work } from './containers'
 
-// CSS
+// CSS 
 import './App.scss'
 import Layout from './containers/Layout';
+import { Header2 } from './containers/Header/Header';
+
 
 const App = () => {
 	let location = useLocation().hash
@@ -13,15 +15,22 @@ const App = () => {
 
 	return (
 		<div className='app'>
-			<Layout idName={location}>
-				<Header />
+			<Layout idName={location} >
+				<Header2/>
 				<About />
 				<Skills />
 				<Work />
 				{/* <Feedback /> */}
 				<Footer />
+				<div className='copyright__sm'>
+				<p className='p-text' style={{ textAlign: 'center'}}>
+					Arana Jayavihan 🍃
+				</p>
+				<p className='p-text' style={{ textAlign: 'center'}}>
+					Copyright @ 2022-2023
+				</p>
+				</div>
 			</Layout>
-
 		</div>
 	);
 }

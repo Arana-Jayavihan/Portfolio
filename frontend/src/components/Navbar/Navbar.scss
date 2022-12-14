@@ -9,7 +9,7 @@
     -webkit-backdrop-filter: blur(15px);
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 21;
 }
 
 .app__navbar-logo {
@@ -143,7 +143,7 @@
             }
         }
 
-        @media screen  and(min-width: 450px) {
+        @media screen  and(min-width: 650px) {
             width: 40%;
         }
 

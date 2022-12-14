@@ -2,6 +2,25 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+  @media screen and (min-width: 650px) {
+    flex: 1;
+    height: 100vh;
+    width: 90%;
+    flex-direction: row-reverse;
+
+    .app__skills-exp {
+      height: 60vh;
+      overflow-y: scroll;
+      margin-right: 1rem;
+    }
+
+    .app__skills-list{
+      width: 40vw;
+      margin-right: 1rem;
+      height: 60vh;
+      overflow-y: scroll;
+    }
+  }
 }
 
 .app__skills-container {
@@ -17,31 +36,42 @@
 }
 
 .app__skills-list {
-  flex: 1;
+  // flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
   height: 60vh;
+  overflow-y: scroll;
   margin-right: 5rem;
 
   @media screen and (max-width: 900px) {
     margin-right: 0;
     justify-content: center;
     align-items: center;
+
   }
 }
 
 .app__skills-list::-webkit-scrollbar {
-  display: none;
+  width: 2px;
+}
+
+.app__skills-list::-webkit-scrollbar-track {
+  background-color: var(--gray-2);
+}
+
+.app__skills-list::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-color: var(--secondary-color);
 }
 
 .app__skills-item {
   flex-direction: column;
   text-align: center;
   position: relative;
-  margin: 1rem;
+  margin: .5rem;
   margin-bottom: 0;
   cursor: pointer;
 
@@ -108,8 +138,9 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  height: 60px;
   overflow-y: scroll;
-  height: 60vh;
+  
 
   @media screen and (max-width: 900px) {
     margin-top: 2rem;
@@ -117,7 +148,17 @@
 }
 
 .app__skills-exp::-webkit-scrollbar {
-  display: none;
+  width: 2px;
+}
+
+.app__skills-exp::-webkit-scrollbar-track {
+  background-color: var(--gray-2);
+}
+
+.app__skills-exp::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-color: var(--secondary-color);
 }
 
 .app__skills-exp-item {
@@ -130,7 +171,7 @@
 }
 
 .app__skills-exp-works {
-  flex: 1;
+  // flex: 1;
 
   .app__skills-exp-work {
     display: flex;

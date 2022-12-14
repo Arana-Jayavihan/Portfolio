@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
-
 import './About.scss'
 import AppWrap from '../../wrapper/AppWrap';
 import MotionWrap from '../../wrapper/MotionWrap'
-
 import { urlFor, client } from '../../client';
 
 
 const About = () => {
-
 	const [abouts, setAbouts] = useState([]);
 
 	useEffect(() => {
@@ -22,7 +19,14 @@ const About = () => {
 	}, []);
 	return (
 		<>
-			<h2 className="head-text">My <span>Areas </span> of  <span>Expertice</span></h2>
+			<div className='section__info'>
+				<h2 className="head-text">Areas <span> of Expertice</span></h2>
+
+				<p className='section__info-text'>
+					The areas of studies and interests that I have been working under my undergraduation program and self studies.
+				</p>
+			</div>
+
 
 			<div className="app__profiles">
 				{abouts.map((about, index) => (
@@ -43,6 +47,7 @@ const About = () => {
 				))}
 			</div>
 		</>
+
 	);
 }
 export default AppWrap(

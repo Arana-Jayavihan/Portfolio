@@ -1,87 +1,124 @@
 import React, { useState } from 'react';
-
+import { motion } from 'framer-motion'
 import { images } from '../../constants';
 import AppWrap from '../../wrapper/AppWrap';
 import MotionWrap from '../../wrapper/MotionWrap';
 import { client } from '../../client';
 import './Footer.scss';
+import { BsGithub, BsInstagram, BsTelephoneFill, BsLinkedin, BsTwitter } from 'react-icons/bs';
+import { FaFacebookF } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+	const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formData;
+	const { username, email, message } = formData;
 
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+	const handleChangeInput = (e) => {
+		const { name, value } = e.target;
+		setFormData({ ...formData, [name]: value });
+	};
 
-  const handleSubmit = () => {
-    setLoading(true);
+	const handleSubmit = () => {
+		setLoading(true);
 
-    const contact = {
-      _type: 'contact',
-      name: formData.username,
-      email: formData.email,
-      message: formData.message,
-    };
+		const contact = {
+			_type: 'contact',
+			name: formData.username,
+			email: formData.email,
+			message: formData.message,
+		};
 
-    client.create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
-  };
+		client.create(contact)
+			.then(() => {
+				setLoading(false);
+				setIsFormSubmitted(true);
+			})
+			.catch((err) => console.log(err));
+	};
 
-  return (
-    <>
-      <h2 className="head-text">Take <span>a coffee</span> & <span>chat</span> with <span>me</span></h2>
+	return (
+		<>
+			<div className='section__info'>
+				<h2 className="head-text">Get <span>In Touch</span></h2>
 
-      <div className="app__footer-cards">
-        <div className="app__footer-card " style={{ backgroundColor: 'GrayText' }}>
-          <img src={images.gmail} alt="phone" />
-          <a href="mailto:aranajayavihan@gmail.com" className="p-text" style={{ color: '#000000' }}>aranajayavihan@gmail.com</a>
-        </div>
-        <div className="app__footer-card" style={{ backgroundColor: 'GrayText' }}>
-          <img src={images.mobile} alt="phone" />
-          <a href="tel:+94 76 415 2204" className="p-text" style={{ color: '#000000' }}>+94 76 415 2204</a>
-        </div>
-      </div>
-      {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
-          <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
-          </div>
-          <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
-          </div>
-          <div>
-            <textarea
-              className="p-text"
-              placeholder="Your Message"
-              value={message}
-              name="message"
-              onChange={handleChangeInput}
-            />
-          </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
-        </div>
-      ) : (
-        <div>
-          <h3 className="head-text">
-            Thank you for getting in touch!
-          </h3>
-        </div>
-      )}
-    </>
-  );
+				<p className='section__info-text'>
+					Hit me up if any questions, inquiries, job oppertunities, or any help needed.
+				</p>
+			</div>
+
+			<div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+				<div className="app__footer-cards">
+					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', marginBottom: '3rem'}}>
+						<h5 className='head-text' style={{ fontSize: '1.75rem', marginBottom: '.5rem' }}>Contact Details</h5>
+						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '30px', width: '125px' }}>
+							<BsTelephoneFill style={{ color: '#28a745', lineHeight: '1.5', fontSize: '1.25rem' }} />
+							<span >
+								<a href="tel:+94 76 415 2204" className="p-text" style={{ color: '#fff', textDecoration: 'none', fontSize: '1,25rem' }}>  +94 76 415 2204</a>
+							</span>
+						</div >
+						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '30px', width: '190px' }}>
+							<MdEmail style={{ color: '#28a745', lineHeight: '1.5', fontSize: '1.25rem' }} />
+							<span >
+								<a href="mailto:aranajayavihan@gmail.com" className="p-text" style={{ color: '#fff', textDecoration: 'none', fontSize: '1,25rem' }}>  aranajayavihan@gmail.com</a>
+							</span>
+						</div >
+					</div>
+					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '3rem'}}>
+						<h5 className='head-text' style={{ fontSize: '1.75rem', marginBottom: '.5rem' }}>Follow Me On</h5>
+						<div className='footer__social'>
+						<div>
+								<BsLinkedin onClick={() => window.open("https://www.linkedin.com/in/arana-jayavihan/", "_blank")} />
+							</div>
+							<div>
+								<BsGithub onClick={() => window.open("https://github.com/Arana-Jayavihan", "_blank")} />
+							</div>
+							<div>
+								<BsInstagram onClick={() => window.open("https://www.instagram.com/_.arana._/", "_blank")} />
+							</div>
+							<div>
+								<BsTwitter onClick={() => window.open("https://twitter.com/Arana_Jayavihan", "_blank")} />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{!isFormSubmitted ? (
+					<div className="app__footer-form app__flex">
+						<div className="app__flex">
+							<input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+						</div>
+						<div className="app__flex">
+							<input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+						</div>
+						<div>
+							<textarea
+								className="p-text"
+								placeholder="Your Message"
+								value={message}
+								name="message"
+								onChange={handleChangeInput}
+							/>
+						</div>
+						<button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+					</div>
+				) : (
+					<div style={{ height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+						<h3 className="head-text">
+							Thank you for Reaching Me 🍃
+						</h3>
+					</div>
+				)}
+
+			</div>
+		</>
+	);
 };
 
 export default AppWrap(
-  MotionWrap(Footer, 'app__footer'),
-  'contact',
-  'app__primarybg',
+	MotionWrap(Footer, 'app__footer'),
+	'contact',
+	'app__primarybg',
 );

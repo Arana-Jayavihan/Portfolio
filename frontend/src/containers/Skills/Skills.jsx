@@ -9,6 +9,8 @@ import './Skills.scss';
 import VisibilitySensor from "react-visibility-sensor";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import ReactVisibilitySensor from 'react-visibility-sensor';
+import { SetActiveOnScroll } from '../../components/Navbar/Navbar';
 
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
@@ -29,7 +31,15 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills <span>& Experiences</span></h2>
+    <div className='section__info'>
+    <h2 className="head-text">Skills <span>& Experience</span></h2>
+
+        <p className='section__info-text'>
+          The skills and experience based on the technologies and platforms that I have been using for
+          software development and security analysis.
+        </p>
+      </div>
+      
       <div className="app__skills-container" >
 
         <motion.div className="app__skills-list">
@@ -77,7 +87,7 @@ const Skills = () => {
                           <img src={urlFor(skill.icon)} alt={skill.name} />
                           <h6 className='skill__percent bold-text'>{skill.percentage}%</h6>
                         </div>
-                        
+
                       </CircularProgressbarWithChildren>
 
                     )

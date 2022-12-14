@@ -3,7 +3,7 @@ $base: 0.6rem;
 .container {
     position: relative;
     display: flex;
-    top: 80;
+    top: 100;
     justify-content: center;
     align-items: center;
     z-index: 20;
@@ -31,7 +31,7 @@ $base: 0.6rem;
 .chevron:after {
     content: '';
     position: absolute;
-    top: 0;
+    // top: 0;
     height: 100%;
     width: 50%;
     background: #ffffff;
