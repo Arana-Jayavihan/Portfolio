@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.74bfba04.css",
-    "main.js": "/static/js/main.d936602b.js",
+    "main.css": "/static/css/main.1a3dd584.css",
+    "main.js": "/static/js/main.d7cbbacf.js",
     "static/media/about04.png": "/static/media/about04.fa7b3a72ed32b0e25bfb.png",
     "static/media/about02.png": "/static/media/about02.7a3df03410ee756268ec.png",
     "static/media/about01.png": "/static/media/about01.080509de05322b7aafda.png",
@@ -31,11 +31,11 @@
     "static/media/ubuntu-4.svg": "/static/media/ubuntu-4.003d7eb2ac69ade756d555f2c7ccc8c3.svg",
     "index.html": "/index.html",
     "static/media/circle.svg": "/static/media/circle.134eeeb1e58895b892195fe8ed63bc9f.svg",
-    "main.74bfba04.css.map": "/static/css/main.74bfba04.css.map",
-    "main.d936602b.js.map": "/static/js/main.d936602b.js.map"
+    "main.1a3dd584.css.map": "/static/css/main.1a3dd584.css.map",
+    "main.d7cbbacf.js.map": "/static/js/main.d7cbbacf.js.map"
   },
   "entrypoints": [
-    "static/css/main.74bfba04.css",
-    "static/js/main.d936602b.js"
+    "static/css/main.1a3dd584.css",
+    "static/js/main.d7cbbacf.js"
   ]
 }

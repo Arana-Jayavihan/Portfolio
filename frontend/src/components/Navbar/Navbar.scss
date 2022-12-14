@@ -26,6 +26,12 @@
             height: 40px;
         }
     }
+
+    @media screen and (min-width: 900px) {
+        h1 {
+            display: none;
+        }
+    }
 }
 
 .app__navbar-links {

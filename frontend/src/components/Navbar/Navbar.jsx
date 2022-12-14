@@ -40,6 +40,7 @@ const Navbar = () => {
                 {/* <svg style={{height: '30px', width: '100px'}} >
                     
                 </svg> */}
+                <h1 className='head-text' style={{ fontSize: '1.5rem' }} ><a href="#home" style={{ textDecoration: 'none', color: '#fff' }} >Arana Jayavihan</a></h1>
             </div>
             <ul className='app__navbar-links'>
                 {
