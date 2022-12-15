@@ -22,7 +22,6 @@ const Footer = () => {
 		setFormData({ ...formData, [name]: value });
 	};
 	const chkEmpty = () => {
-		console.log(formData.username, formData.email, formData.message)
 		if (formData.username !== '' && formData.email !== '' && formData.message !== '') {
 			handleSubmit()
 		}
