@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from "react-router-dom";
-// Containers
-import { About, Feedback, Footer, Header, Skills, Work } from './containers'
-
-// CSS 
+import { About, Footer, Header, Skills, Work } from './containers'
 import './App.scss'
 import Layout from './containers/Layout';
 

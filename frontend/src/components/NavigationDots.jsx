@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const NavigationDots = () => {
   const navArr = ['home', 'about', 'skills', 'projects', 'contact']
-    const [toggle, setToggle] = useState(false);
     const [active, setActive] = useState('home');
     const count = navArr.length
     

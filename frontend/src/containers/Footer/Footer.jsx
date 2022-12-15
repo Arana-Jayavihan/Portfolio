@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion'
-import { images } from '../../constants';
 import AppWrap from '../../wrapper/AppWrap';
 import MotionWrap from '../../wrapper/MotionWrap';
 import { client } from '../../client';
@@ -10,7 +9,6 @@ import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
 	const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-	const [isEmpty, setIsEmpty] = useState(true);
 	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [alert, setAlert] = useState(false);
