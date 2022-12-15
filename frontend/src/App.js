@@ -6,7 +6,6 @@ import { About, Feedback, Footer, Header, Skills, Work } from './containers'
 // CSS 
 import './App.scss'
 import Layout from './containers/Layout';
-import { Header2 } from './containers/Header/Header';
 
 
 const App = () => {
@@ -16,7 +15,7 @@ const App = () => {
 	return (
 		<div className='app'>
 			<Layout idName={location} >
-				<Header2/>
+				<Header/>
 				<About />
 				<Skills />
 				<Work />
