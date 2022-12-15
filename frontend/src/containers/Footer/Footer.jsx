@@ -11,6 +11,7 @@ import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
 	const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+	const [isEmpty, setIsEmpty] = useState(false);
 	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
 
@@ -22,6 +23,10 @@ const Footer = () => {
 	};
 
 	const handleSubmit = () => {
+		console.log(formData.email, formData.name)
+		if(formData.name === '' && formData.email === ''){
+			setIsEmpty(true)
+		}
 		setLoading(true);
 
 		const contact = {
@@ -88,10 +93,10 @@ const Footer = () => {
 				{!isFormSubmitted ? (
 					<div className="app__footer-form app__flex">
 						<div className="app__flex">
-							<input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+							<input className="p-text" type="text" placeholder="Your Name" name="username"  value={username} onChange={handleChangeInput} />
 						</div>
 						<div className="app__flex">
-							<input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+							<input className="p-text" type="email" placeholder="Your Email" name="email" required value={email} onChange={handleChangeInput} />
 						</div>
 						<div>
 							<textarea
@@ -104,13 +109,20 @@ const Footer = () => {
 						</div>
 						<button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
 					</div>
-				) : (
+				) : isFormSubmitted && !isEmpty ? (
 					<div style={{ height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 						<h3 className="head-text">
-							Thank you for Reaching Me 🍃
+							Thank You For Reaching Me 🍃
 						</h3>
 					</div>
-				)}
+				) : isFormSubmitted && isEmpty ? (
+					<div style={{ height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+						<h3 className="head-text">
+							Please Fill All Details
+						</h3>
+					</div>
+				) : {}
+				}
 
 			</div>
 		</>
