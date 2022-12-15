@@ -6,14 +6,14 @@ import MotionWrap from '../../wrapper/MotionWrap';
 import { client } from '../../client';
 import './Footer.scss';
 import { BsGithub, BsInstagram, BsTelephoneFill, BsLinkedin, BsTwitter } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
 	const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-	const [isEmpty, setIsEmpty] = useState(false);
+	const [isEmpty, setIsEmpty] = useState(true);
 	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [alert, setAlert] = useState(false);
 
 	const { username, email, message } = formData;
 
@@ -21,12 +21,16 @@ const Footer = () => {
 		const { name, value } = e.target;
 		setFormData({ ...formData, [name]: value });
 	};
-
-	const handleSubmit = () => {
-		console.log(formData.email, formData.name)
-		if(formData.name === '' && formData.email === ''){
-			setIsEmpty(true)
+	const chkEmpty = () => {
+		console.log(formData.username, formData.email, formData.message)
+		if (formData.username !== '' && formData.email !== '' && formData.message !== '') {
+			handleSubmit()
 		}
+		else {
+			setAlert(true)
+		}
+	}
+	const handleSubmit = () => {
 		setLoading(true);
 
 		const contact = {
@@ -56,7 +60,7 @@ const Footer = () => {
 
 			<div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
 				<div className="app__footer-cards">
-					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', marginBottom: '3rem'}}>
+					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', marginBottom: '3rem' }}>
 						<h5 className='head-text' style={{ fontSize: '1.75rem', marginBottom: '.5rem' }}>Contact Details</h5>
 						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '30px', width: '125px' }}>
 							<BsTelephoneFill style={{ color: '#28a745', lineHeight: '1.5', fontSize: '1.25rem' }} />
@@ -71,10 +75,10 @@ const Footer = () => {
 							</span>
 						</div >
 					</div>
-					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '3rem'}}>
+					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '3rem' }}>
 						<h5 className='head-text' style={{ fontSize: '1.75rem', marginBottom: '.5rem' }}>Follow Me On</h5>
 						<div className='footer__social'>
-						<div>
+							<div>
 								<BsLinkedin onClick={() => window.open("https://www.linkedin.com/in/arana-jayavihan/", "_blank")} />
 							</div>
 							<div>
@@ -92,8 +96,19 @@ const Footer = () => {
 
 				{!isFormSubmitted ? (
 					<div className="app__footer-form app__flex">
+
+						<motion.div
+							whileInView={{ opacity: [0, 1] }}>
+							{
+								alert ?
+									<p className='p-text' style={{ color: '#28a745', }}>Fill All Fields</p>
+									: null
+							}
+
+						</motion.div>
+
 						<div className="app__flex">
-							<input className="p-text" type="text" placeholder="Your Name" name="username"  value={username} onChange={handleChangeInput} />
+							<input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
 						</div>
 						<div className="app__flex">
 							<input className="p-text" type="email" placeholder="Your Email" name="email" required value={email} onChange={handleChangeInput} />
@@ -107,18 +122,14 @@ const Footer = () => {
 								onChange={handleChangeInput}
 							/>
 						</div>
-						<button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+
+						<button type="button" className="p-text" onClick={chkEmpty}>{!loading ? 'Send Message' : 'Sending...'}</button>
+
 					</div>
-				) : isFormSubmitted && !isEmpty ? (
+				) : isFormSubmitted ? (
 					<div style={{ height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 						<h3 className="head-text">
 							Thank You For Reaching Me 🍃
-						</h3>
-					</div>
-				) : isFormSubmitted && isEmpty ? (
-					<div style={{ height: '40vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-						<h3 className="head-text">
-							Please Fill All Details
 						</h3>
 					</div>
 				) : {}
