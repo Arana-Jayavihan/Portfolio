@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const NavigationDots = () => {
   const navArr = ['home', 'about', 'skills', 'projects', 'contact']
@@ -27,7 +28,11 @@ const NavigationDots = () => {
     })
 
   return (
-    <div className="app__navigation">
+    <motion.div className="app__navigation"
+      whileInView={{ opacity: [0,1] }}
+      transition={{ duration: .75, ease: 'easeInOut' }}
+      initial={{ opacity: 0}}
+    >
       {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
         <a
           href={`#${item}`}
@@ -36,7 +41,7 @@ const NavigationDots = () => {
           style={active === item ? { backgroundColor: '#28a745' } : {}}
         />
       ))}
-    </div>
+    </motion.div>
   )
 }
 

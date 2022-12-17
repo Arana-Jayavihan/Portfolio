@@ -1,6 +1,7 @@
 .app {
-  background-color: var(--primary-color);
+  background-color: "#000000";
   font-family: var(--font-base);
+  transition: 1s ease-in-out;
 }
 
 .app::-webkit-scrollbar {
@@ -222,6 +223,29 @@
   }
 }
 
+.footer__social-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+
+  div{
+    margin: .5rem;
+    margin-bottom: 0;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      color: var(--gray-color);
+      cursor: pointer;
+    }
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+}
+
 .app__navigation {
   display: flex;
   justify-content: center;
@@ -305,6 +329,12 @@
       margin-bottom: 1.5rem;
     }
   }
+}
+
+.copyright__sm-nav {
+  position: relative;
+  background-color: transparent;
+  align-self: center;
 }
 
 .button {

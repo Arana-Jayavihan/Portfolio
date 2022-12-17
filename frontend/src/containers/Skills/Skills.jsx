@@ -43,13 +43,14 @@ const Skills = () => {
       <div className="app__skills-container" >
 
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
+              initial={{ opacity: 0 }}
               className="app__skills-item app__flex"
               style={{ overflow: 'visible' }}
-              key={skill.name}
+              key={index}
             >
               <VisibilitySensor>
                 {
@@ -57,6 +58,7 @@ const Skills = () => {
                     const percent = isVisible ? skill.percentage : 0
                     return (
                       <CircularProgressbarWithChildren
+                        key={index}
                         id='progress'
                         value={percent}
                         styles={{
@@ -81,7 +83,7 @@ const Skills = () => {
                           className="app__flex"
                           data-tip
                           data-for={skill.name}
-                          key={skill.name}
+                          key={index}
                         >
 
                           <img src={urlFor(skill.icon)} alt={skill.name} />
@@ -101,10 +103,10 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="app__skills-exp">
-          {experiences.map((experience) => (
+          {experiences.map((experience, index) => (
             <motion.div
               className="app__skills-exp-item"
-              key={experience.year}
+              key={index}
             >
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
@@ -115,6 +117,7 @@ const Skills = () => {
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
+                      initial={{ opacity: 0 }}
                       className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}

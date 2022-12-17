@@ -3,19 +3,24 @@ import { Navbar } from '../../components/Navbar/Navbar';
 import { NavigationDots } from '../../components/NavigationDots';
 import SocialMedia from '../../components/SocialMedia';
 import './index.scss'
+import { motion } from 'framer-motion';
 
 const Layout = (props) => {
     return (
         <>
-            <Navbar active={props.idName} />
+            <Navbar active={props.idName} user={props.user} />
             {props.children}
             <SocialMedia />
             <NavigationDots active={props.idName} />
             
-            <div className="copyright">
+            <motion.div 
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            className="copyright">
                 <p className="p-text" style={{ color: "white" }}>Arana Jayavihan 🍃</p>
                 <p className="p-text" style={{ color: "white" }}>Copyright @ 2022 - 2023</p>
-            </div>
+            </motion.div>
         </>
     );
 }

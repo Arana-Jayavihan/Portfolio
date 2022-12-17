@@ -11,19 +11,21 @@ const Header = (props) => {
 	const [profile, setProfile] = useState([]);
 	useEffect(() => {
 		setProfile(props.user)
-		console.log(profile)
 	}, [props.user]);
 
 	return (
 		<>
-			<div
+			<motion.div
+			whileInView={{ opacity: [0,1], scale: [.975, 1] }}
+			transition={{ duration: .75, ease: 'easeInOut', delayChildren: 0.5 }}
+			initial={{ opacity: 0, scale: 0.975 }}
 				id='home'
 				style={{ zIndex: '20', top: '10%', display: 'flex', flexDirection: 'row' }}
 			>
 				<motion.div
 					className='side__panel'
-					whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-					transition={{ duration: 0.5 }}
+					// whileInView={{opacity: [ 0, 1] }}
+					// transition={{ duration: 1 }}
 				>
 					<div className='panel-image'>
 						{
@@ -33,7 +35,7 @@ const Header = (props) => {
 
 					</div>
 					<div style={{ margin: '1rem', marginBottom: '2rem' }} >
-						<h5 className='head-text' style={{ fontSize: '1.5rem', fontWeight: '400', fontFamily: 'inherit' }} >Arana Jayavihan</h5>
+						<h5 className='head-text' style={{ fontSize: '1.5rem', fontWeight: '400', fontFamily: 'inherit' }} >{profile.fullName}</h5>
 					</div>
 					<div>
 						<p className='p-text' style={{ fontSize: '16px', marginTop: "2%" }}><span style={{ color: '#28a745' }} >Email : </span><a href={`mailto:${profile.email}`} style={{ color: '#fff', textDecoration: 'none' }}>  {profile.email}</a></p>
@@ -66,8 +68,8 @@ const Header = (props) => {
 
 				<motion.div
 					className='right-panel'
-					whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-					transition={{ duration: 0.5 }}
+					// whileInView={{ opacity: [ 0, 1] }}
+					// transition={{ duration: 1 }}
 				>
 					<div>
 						<p className="p-text" style={{ color: '#FFF', textAlign: 'center', fontWeight: 400, fontSize: '18px' }}>Hello Folks <span style={{ fontSize: '1.5rem' }} >👋</span> <br></br>I am <span style={{ color: '#28a745', fontSize: '1.5rem' }}>{profile.fullName}</span></p>
@@ -102,15 +104,15 @@ const Header = (props) => {
 						</p>
 					</div>
 					<div className='arrow-animation'>
-						<div class="container">
-							<div class="chevron"></div>
-							<div class="chevron"></div>
-							<div class="chevron"></div>
+						<div className="container">
+							<div className="chevron"></div>
+							<div className="chevron"></div>
+							<div className="chevron"></div>
 						</div>
 					</div>
 				</motion.div>
 
-			</div>
+			</motion.div>
 		</>
 	)
 }

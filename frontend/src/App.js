@@ -5,6 +5,7 @@ import './App.scss'
 import Layout from './containers/Layout';
 import { client } from './client';
 import { ThreeDots } from 'react-loader-spinner'
+import { motion } from 'framer-motion';
 
 const App = () => {
 	const [profile, setProfile] = useState([]);
@@ -28,7 +29,11 @@ const App = () => {
 		<>
 			{
 				loading ?
-					<div style={{ width: '100%', height: '100vh', backgroundColor: '#000000', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+					<motion.div
+						animate={ loading ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0}}
+						transition={{ duration: .75, ease: 'easeInOut' }}
+						initial={{ opacity: 0, scale: 0 }}
+						style={{ width: '100%', height: '100vh', backgroundColor: '#000000', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
 						<ThreeDots
 							height="80"
 							width="80"
@@ -39,11 +44,15 @@ const App = () => {
 							wrapperClassName=""
 							visible={true}
 						/>
-					</div>
+					</motion.div>
 
 					:
-					<div className='app'>
-						<Layout idName={location} >
+					<motion.div
+						whileInView={{ opacity: [0, 1] }}
+						transition={{ duration: .75, ease: 'easeInOut' }}
+						initial={{ opacity: 0 }}
+						className='app'>
+						<Layout idName={location} user={profile} >
 							<Header user={profile} />
 							<About />
 							<Skills />
@@ -59,7 +68,7 @@ const App = () => {
 								</p>
 							</div>
 						</Layout>
-					</div>
+					</motion.div>
 			}
 		</>
 

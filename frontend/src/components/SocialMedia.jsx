@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs';
 import { client } from '../client';
+import { motion } from 'framer-motion';
 
 const SocialMedia = () => {
   const [profile, setProfile] = useState([]);
@@ -12,12 +13,14 @@ const SocialMedia = () => {
     client.fetch(query)
       .then((data) => {
         setProfile(data)
-        console.log(profile)
       })
   }, []);
 
   return (
-    <div className="app__social"
+    <motion.div className="app__social"
+      whileInView={{ opacity: [0, 1] }}
+      transition={{ duration: .75, ease: 'easeInOut' }}
+      initial={{ opacity: 0 }}
     >
       <div>
         <BsLinkedin onClick={() => window.open(profile.linkedin, "_blank")} />
@@ -31,7 +34,7 @@ const SocialMedia = () => {
       <div>
         <BsTwitter onClick={() => window.open(profile.twitter, "_blank")} />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

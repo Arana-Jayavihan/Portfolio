@@ -14,7 +14,8 @@ const Footer = () => {
 	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [alert, setAlert] = useState(false);
-
+	const [_id, set_id] = useState('');
+	const [_ext, set_ext] = useState('');
 	const { username, email, message } = formData;
 
 	useEffect(() => {
@@ -23,9 +24,11 @@ const Footer = () => {
 		client.fetch(query)
 			.then((data) => {
 				setProfile(data)
-				console.log(profile)
+				set_ext(data.resume.asset._ref.split("-")[2])
+				set_id(data.resume.asset._ref.split("-")[1])
 			})
-	}, []);
+
+	}, [1]);
 
 	const handleChangeInput = (e) => {
 		const { name, value } = e.target;
@@ -57,9 +60,6 @@ const Footer = () => {
 			.catch((err) => console.log(err));
 	};
 
-	const [_file, id, extension] = profile.resume.asset._ref.split('-')
-	console.log(id, extension)
-	const cvUrl = `https://cdn.sanity.io/files/28upnais/production/${id}.${extension}`
 	return (
 		<>
 			<div className='section__info'>
@@ -68,15 +68,20 @@ const Footer = () => {
 				<p className='section__info-text'>
 					Hit me up if any questions, inquiries, job oppertunities, or any help needed.
 				</p>
+
 				{
-					console.log(profile.resume.asset._ref)
+					_id !== '' && _ext !== '' ?
+						<button style={{ marginBottom: '1rem' }} type="button" className="button p-text" onClick={() =>
+							window.open(`https://cdn.sanity.io/files/28upnais/production/${_id}.${_ext}?dl=`)
+						}>Download CV</button>
+						: null
 				}
-				<button style={{ marginBottom: '1rem' }} type="button" className="button p-text" onClick={() => window.open(`${cvUrl}?dl=`) }>Download CV</button>
+
 			</div>
-		
+
 			<div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
 				<div className="app__footer-cards">
-					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', marginBottom: '3rem' }}>
+					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', marginBottom: '3rem', marginTop: '1rem' }}>
 						<h5 className='head-text' style={{ fontSize: '1.75rem', marginBottom: '.5rem' }}>Contact Details</h5>
 						<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '30px', width: '125px' }}>
 							<BsTelephoneFill style={{ color: '#28a745', lineHeight: '1.5', fontSize: '1.25rem' }} />
@@ -91,7 +96,7 @@ const Footer = () => {
 							</span>
 						</div >
 					</div>
-					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '3rem' }}>
+					<div style={{ display: 'flex', height: '10vh', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', marginBottom: '3rem', marginTop: '1rem' }}>
 						<h5 className='head-text' style={{ fontSize: '1.75rem', marginBottom: '.5rem' }}>Follow Me On</h5>
 						<div className='footer__social'>
 							<div>

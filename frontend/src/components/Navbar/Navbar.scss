@@ -9,7 +9,7 @@
     -webkit-backdrop-filter: blur(15px);
     position: fixed;
     top: 0;
-    z-index: 21;
+    z-index: 30;
 }
 
 .app__navbar-logo {
@@ -85,24 +85,23 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--secondary-color);
-
+    z-index: 30;
     svg {
         width: 70%;
         height: 70%;
         color: var(--white-color);
     }
 
-    div {
+    .menu-div {
         position: fixed;
         top: 0;
         bottom: 0;
         right: 0;
-        z-index: 5;
+        z-index: 22;
         padding: 1rem;
         width: 80%;
         height: 100vh;
@@ -110,16 +109,29 @@
         justify-content: flex-end;
         align-items: flex-end;
         flex-direction: column;
-        background-color: var(--white-color);
+        background-color: var(--gray-2);
         box-shadow:  0 0 20px rgba(168, 168, 168, 0.15);
 
-        svg {
-            width: 25px;
-            height: 25px;
+        .cross {
+            width: 50px;
+            height: 50px;
             color: var(--secondary-color);
-            margin: 0.5rem, 1rem;
         }
 
+        .panel-image-nav {
+            margin-top: 20%;
+            border-radius: 50%;
+            height: 160px;
+            width: 160px;
+            padding: 5px;
+            background-color: var(--gray-2);
+            align-self: center;
+        
+            img {
+              height: 150px;
+              width: 150px;
+            }
+        }
         ul {
             list-style: none;
             margin: 0;
@@ -128,14 +140,15 @@
             width: 100%;
             display: flex;
             justify-content: flex-start;
-            align-items: flex-start;
+            align-items: center;
+            align-self: center;
             flex-direction: column;
 
             li {
                 margin: 1rem;
 
                 a {
-                    color: var(--gray-color);
+                    color: var(--white-color);
                     text-decoration: none;
                     font-size: 1rem;
                     text-transform: uppercase;
