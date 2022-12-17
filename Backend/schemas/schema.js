@@ -9,10 +9,12 @@ import experiences from './experiences'
 import skills from './skills'
 import workExperience from './workExperience'
 import contact from './contact'
+import profile from './profile'
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    profile,
     works, 
     Feedback, 
     brands, 

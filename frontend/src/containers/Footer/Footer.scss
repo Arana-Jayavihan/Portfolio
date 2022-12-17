@@ -107,26 +107,26 @@
     // }
   }
 
-  button {
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--white-color);
+  // button {
+  //   padding: 1rem 2rem;
+  //   border-radius: 10px;
+  //   border: none;
+  //   background-color: var(--white-color);
 
-    font-weight: 500;
-    color: var(--secondary-color);
-    outline: none;
-    margin: 2rem 0 0 0;
-    font-family: var(--font-base);
+  //   font-weight: 500;
+  //   color: var(--secondary-color);
+  //   outline: none;
+  //   margin: 2rem 0 0 0;
+  //   font-family: var(--font-base);
 
-    transition: all .5s ease-in-out;
-    cursor: pointer;
+  //   transition: all .5s ease-in-out;
+  //   cursor: pointer;
 
-    &:hover {
-      background-color: var(--secondary-color);
-      color: var(--white-color);
-    }
-  }
+  //   &:hover {
+  //     background-color: var(--secondary-color);
+  //     color: var(--white-color);
+  //   }
+  // }
 
   @media screen and (max-width: 768px) {
     width: 100%;
