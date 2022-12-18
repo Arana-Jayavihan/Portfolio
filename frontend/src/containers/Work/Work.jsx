@@ -78,32 +78,40 @@ const Work = () => {
                   transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                   className="app__work-hover app__flex"
                 >
-                  <a href={work.projectLink} target="_blank" rel="noreferrer">
+                  {
 
-                    <motion.div
-                      whileInView={{ scale: [0, 1] }}
-                      whileHover={{ scale: [1, 0.90] }}
-                      transition={{ duration: 0.25 }}
-                      className="app__flex"
-                    >
-                      <AiFillEye />
-                    </motion.div>
-                  </a>
-                  <a href={work.codeLink} target="_blank" rel="noreferrer">
-                    <motion.div
-                      whileInView={{ scale: [0, 1] }}
-                      whileHover={{ scale: [1, 0.90] }}
-                      transition={{ duration: 0.25 }}
-                      className="app__flex"
-                    >
-                      <AiFillGithub />
-                    </motion.div>
-                  </a>
+                    work.projectLink !== undefined ?
+                      <a href={work.projectLink} target="_blank" rel="noreferrer">
+
+                        <motion.div
+                          whileInView={{ scale: [0, 1] }}
+                          whileHover={{ scale: [1, 0.90] }}
+                          transition={{ duration: 0.25 }}
+                          className="app__flex"
+                        >
+                          <AiFillEye />
+                        </motion.div>
+                      </a> : null
+                  }
+                  {
+                    work.codeLink !== undefined ?
+                      <a href={work.codeLink} target="_blank" rel="noreferrer">
+                        <motion.div
+                          whileInView={{ scale: [0, 1] }}
+                          whileHover={{ scale: [1, 0.90] }}
+                          transition={{ duration: 0.25 }}
+                          className="app__flex"
+                        >
+                          <AiFillGithub />
+                        </motion.div>
+                      </a> : null
+                  }
+
                 </motion.div>
               </div>
 
               <div className="app__work-content app__flex">
-                <h4 className="bold-text" style={{ color: 'black' }}>{work.title}</h4>
+                <h4 className="bold-text" style={{ color: 'black', textAlign: 'center' }}>{work.title}</h4>
                 <p className="p-text" style={{ marginTop: 10, textAlign: 'center', color: 'black' }}>{work.description}</p>
 
                 <div className="app__work-tag app__flex">
