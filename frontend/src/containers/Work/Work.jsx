@@ -43,7 +43,7 @@ const Work = () => {
         <h2 className="head-text">Completed <span> Projects</span></h2>
 
         <p className='section__info-text'>
-          The list of projects that I completed through my days of stydying. Includes projects of different
+          The list of projects that I completed through my days of studying. Includes projects of different
           scopes.
         </p>
       </div>
