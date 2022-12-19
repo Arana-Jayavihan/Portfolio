@@ -14,7 +14,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
-    const query = '*[_type == "works"]';
+    const query = '*[_type == "works"] | order(_createdAt desc) ';
 
     client.fetch(query).then((data) => {
       setWorks(data);
@@ -67,6 +67,7 @@ const Work = () => {
           className="app__work-portfolio"
         >
           {filterWork.map((work, index) => (
+            
             <div className="app__work-item app__flex" key={index}>
               <div
                 className="app__work-img app__flex"
@@ -76,10 +77,9 @@ const Work = () => {
                 <motion.div
                   whileHover={{ opacity: [0, 1] }}
                   transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                  className="app__work-hover app__flex"
+                  className="app__work-hover"
                 >
                   {
-
                     work.projectLink !== undefined ?
                       <a href={work.projectLink} target="_blank" rel="noreferrer">
 
@@ -108,6 +108,39 @@ const Work = () => {
                   }
 
                 </motion.div>
+                <div
+                  className="app__work-hover-mobile"
+                >
+                  {
+
+                    work.projectLink !== undefined ?
+                      <a href={work.projectLink} target="_blank" rel="noreferrer">
+
+                        <motion.div
+                          whileInView={{ scale: [0, 1] }}
+                          whileTap={{ scale: [1, 0.90] }}
+                          transition={{ duration: 0.25 }}
+                          className="app__flex"
+                        >
+                          <AiFillEye />
+                        </motion.div>
+                      </a> : null
+                  }
+                  {
+                    work.codeLink !== undefined ?
+                      <a href={work.codeLink} target="_blank" rel="noreferrer">
+                        <motion.div
+                          whileInView={{ scale: [0, 1] }}
+                          whileTap={{ scale: [1, 0.90] }}
+                          transition={{ duration: 0.25 }}
+                          className="app__flex"
+                        >
+                          <AiFillGithub />
+                        </motion.div>
+                      </a> : null
+                  }
+
+                </div>
               </div>
 
               <div className="app__work-content app__flex">

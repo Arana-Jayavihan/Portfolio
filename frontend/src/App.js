@@ -30,7 +30,7 @@ const App = () => {
 			{
 				loading ?
 					<motion.div
-						animate={ loading ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0}}
+						animate={loading ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
 						transition={{ duration: .75, ease: 'easeInOut' }}
 						initial={{ opacity: 0, scale: 0 }}
 						style={{ width: '100%', height: '100vh', backgroundColor: '#000000', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
@@ -60,12 +60,18 @@ const App = () => {
 							{/* <Feedback /> */}
 							<Footer user={profile} />
 							<div className='copyright__sm'>
-								<p className='p-text' style={{ textAlign: 'center' }}>
-									Arana Jayavihan 🍃
-								</p>
-								<p className='p-text' style={{ textAlign: 'center' }}>
-									Copyright @ 2022-2023
-								</p>
+								<motion.div
+									whileInView={{ opacity: [0, 1], scale: [.975, 1] }}
+									transition={{ duration: .75, ease: 'easeInOut' }}
+									initial={{ opacity: 0, scale: 0.975 }}>
+									<p className='p-text' style={{ textAlign: 'center' }}>
+										Arana Jayavihan 🍃
+									</p>
+									<p className='p-text' style={{ textAlign: 'center' }}>
+										Copyright @ 2022-2023
+									</p>
+								</motion.div>
+
 							</div>
 						</Layout>
 					</motion.div>

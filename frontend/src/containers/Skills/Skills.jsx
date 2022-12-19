@@ -9,15 +9,13 @@ import './Skills.scss';
 import VisibilitySensor from "react-visibility-sensor";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import ReactVisibilitySensor from 'react-visibility-sensor';
-import { SetActiveOnScroll } from '../../components/Navbar/Navbar';
 
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
+    const query = '*[_type == "experiences" ] | order(year)';
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
@@ -65,7 +63,7 @@ const Skills = () => {
                           root: {},
                           path: {
                             stroke: `#28a745`,
-                            strokeLinecap: 'round',
+                            strokeLinecap: 'butt',
                             transition: 'stroke-dashoffset 2s ease 0s',
                             transform: 'rotate(1turn)',
                             transformOrigin: 'center center',
@@ -73,7 +71,7 @@ const Skills = () => {
 
                           trail: {
                             stroke: '#d6d6d6',
-                            strokeLinecap: 'round',
+                            strokeLinecap: 'butt',
                             transform: 'rotate(1turn)',
                             transformOrigin: 'center center',
                           },

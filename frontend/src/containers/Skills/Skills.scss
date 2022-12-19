@@ -10,6 +10,7 @@
 
     .app__skills-exp {
       height: 60vh;
+      width: 20vw;
       overflow-y: scroll;
       margin-right: 1rem;
     }
@@ -41,7 +42,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 50vh;
   overflow-y: scroll;
   margin-right: 5rem;
 
@@ -133,12 +134,12 @@
 }
 
 .app__skills-exp {
-  flex: 1;
+  // flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  height: 60px;
+  height: 50vh;
   overflow-y: scroll;
   
 
@@ -168,6 +169,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 .app__skills-exp-works {
