@@ -16,7 +16,7 @@ const Skills = () => {
 
   useEffect(() => {
     const query = '*[_type == "experiences" ] | order(year)';
-    const skillsQuery = '*[_type == "skills"] order(_createdAt)';
+    const skillsQuery = '*[_type == "skills"] | order(_createdAt)';
 
     client.fetch(query).then((data) => {
       setExperiences(data);
