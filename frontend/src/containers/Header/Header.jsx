@@ -40,7 +40,7 @@ const Header = (props) => {
 					<div>
 						<p className='p-text' style={{ fontSize: '16px', marginTop: "2%" }}><span style={{ color: '#28a745' }} >Email : </span><a href={`mailto:${profile.email}`} style={{ color: '#fff', textDecoration: 'none' }}>  {profile.email}</a></p>
 						<hr style={{ marginTop: '3%', marginBottom: '3%', border: '.5px #212529 solid' }}></hr>
-						<p className='p-text' style={{ fontSize: '16px', marginTop: "2%" }}><span style={{ color: '#28a745' }} >Contact : </span><a href={`mailto:${profile.contact}`} style={{ color: '#fff', textDecoration: 'none' }}>  {profile.contact}</a></p>
+						<p className='p-text' style={{ fontSize: '16px', marginTop: "2%" }}><span style={{ color: '#28a745' }} >Contact : </span><a href={`tel:${profile.contact}`} style={{ color: '#fff', textDecoration: 'none' }}>  {profile.contact}</a></p>
 						<hr style={{ marginTop: '3%', marginBottom: '3%', border: '.5px #212529 solid' }}></hr>
 						<p className='p-text' style={{ fontSize: '16px', marginTop: "2%", color: '#fff' }}><span style={{ color: '#28a745' }} >From : </span>{profile.from}</p>
 						<hr style={{ marginTop: '3%', marginBottom: '3%', border: '.5px #212529 solid' }}></hr>
