@@ -68,6 +68,10 @@ export default {
                 title: 'All',
                 value: 'All'
               },
+              {
+                title: 'AI',
+                value: 'AI'
+              },
             ]
           }
         }
