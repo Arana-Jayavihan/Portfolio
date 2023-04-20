@@ -53,6 +53,14 @@ export default {
                 value: 'Web App'
               },
               {
+                title: 'Web3',
+                value: 'Web3'
+              },
+              {
+                title: 'Blockchain',
+                value: 'Blockchain'
+              },
+              {
                 title: 'Python',
                 value: 'Python'
               },
