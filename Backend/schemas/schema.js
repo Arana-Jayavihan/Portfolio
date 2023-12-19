@@ -15,9 +15,7 @@ export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
     profile,
-    works, 
-    Feedback, 
-    brands, 
+    works,
     abouts, 
     skills, 
     workExperience, 

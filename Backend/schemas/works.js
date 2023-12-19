@@ -53,8 +53,8 @@ export default {
                 value: 'Web App'
               },
               {
-                title: 'Web3',
-                value: 'Web3'
+                title: 'Web 3',
+                value: 'Web 3'
               },
               {
                 title: 'Blockchain',

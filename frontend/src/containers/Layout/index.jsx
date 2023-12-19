@@ -19,7 +19,7 @@ const Layout = (props) => {
             initial={{ opacity: 0 }}
             className="copyright">
                 <p className="p-text" style={{ color: "white" }}>Arana Jayavihan 🍃</p>
-                <p className="p-text" style={{ color: "white" }}>Copyright @ 2022 - 2023</p>
+                <p className="p-text" style={{ color: "white" }}>{props?.user?.copyright}</p>
             </motion.div>
         </>
     );

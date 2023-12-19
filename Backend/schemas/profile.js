@@ -73,6 +73,24 @@ export default {
                 }
             ]
         },
+        {
+            name: 'roles',
+            title: 'Roles',
+            type: 'array',
+            of: [
+                {
+                    name: 'role',
+                    title: 'Role',
+                    type: 'string'
+                }
+            ]
+        },
+        {
+            name: 'copyright',
+            title: 'Copy Right',
+            type: 'string'
+        }
+
         // {
         //     name: 'typeanimation',
         //     title: 'Type Animation',

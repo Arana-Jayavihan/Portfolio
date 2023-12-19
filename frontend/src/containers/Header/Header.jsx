@@ -9,23 +9,30 @@ import { useEffect } from 'react';
 
 const Header = (props) => {
 	const [profile, setProfile] = useState([]);
+	const [typeAnim, settTypeAnim] = useState([]);
 	useEffect(() => {
 		setProfile(props.user)
-	}, [props.user]);
+		let roles = []
+		props?.user?.roles?.forEach((role) => {
+			roles.push(role);
+			roles.push(1750)
+		})
+		settTypeAnim(roles)
+	}, [props]);
 
 	return (
 		<>
 			<motion.div
-			whileInView={{ opacity: [0,1], scale: [.975, 1] }}
-			transition={{ duration: .75, ease: 'easeInOut', delayChildren: 0.5 }}
-			initial={{ opacity: 0, scale: 0.975 }}
+				whileInView={{ opacity: [0, 1], scale: [.975, 1] }}
+				transition={{ duration: .75, ease: 'easeInOut', delayChildren: 0.5 }}
+				initial={{ opacity: 0, scale: 0.975 }}
 				id='home'
 				style={{ zIndex: '20', top: '10%', display: 'flex', flexDirection: 'row' }}
 			>
 				<motion.div
 					className='side__panel'
-					// whileInView={{opacity: [ 0, 1] }}
-					// transition={{ duration: 1 }}
+				// whileInView={{opacity: [ 0, 1] }}
+				// transition={{ duration: 1 }}
 				>
 					<div className='panel-image'>
 						{
@@ -68,36 +75,28 @@ const Header = (props) => {
 
 				<motion.div
 					className='right-panel'
-					// whileInView={{ opacity: [ 0, 1] }}
-					// transition={{ duration: 1 }}
+				// whileInView={{ opacity: [ 0, 1] }}
+				// transition={{ duration: 1 }}
 				>
 					<div>
 						<p className="p-text" style={{ color: '#FFF', textAlign: 'center', fontWeight: 400, fontSize: '18px' }}>Hello Folks <span style={{ fontSize: '1.5rem' }} >👋</span> <br></br>I am <span style={{ color: '#28a745', fontSize: '1.5rem' }}>{profile.fullName}</span></p>
 					</div>
-					<div className='type-animation'>
+					{
+						typeAnim?.length !== 0 ? (
+							<div className='type-animation'>
+								{console.log(typeAnim)}
+								<TypeAnimation
+									sequence={typeAnim}
+									speed={50}
+									wrapper="span"
+									style={{ fontSize: '1.75em', fontWeight: 'bold', fontFamily: 'inherit' }}
+									repeat={Infinity}
+								/>
 
-						<TypeAnimation
-							sequence={
-								[
-									'Cyber Security Undergraduate',
-									1750,
-									'Security Analyst',
-									1750,
-									'Penetration Tester',
-									1750,
-									'Web 2/3 Developer',
-									1750,
-									'Software Developer',
-									1750,
-								]
-							}
-							speed={50}
-							wrapper="span"
-							style={{ fontSize: '1.75em', fontWeight: 'bold', fontFamily: 'inherit' }}
-							repeat={Infinity}
-						/>
+							</div>
+						) : []
+					}
 
-					</div>
 					<div style={{ width: '80%' }}>
 						<p className='p-text' style={{ color: '#fff', fontSize: '1rem', textAlign: 'center' }}>
 							{profile.description}

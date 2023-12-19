@@ -20,7 +20,7 @@ const About = () => {
 	return (
 		<>
 			<div className='section__info'>
-				<h2 className="head-text">Areas <span> of Expertice</span></h2>
+				<h2 className="head-text">Areas <span> of Expertise</span></h2>
 
 				<p className='section__info-text'>
 					The areas of studies and interests that I have been working under my undergraduation program and self studies.
