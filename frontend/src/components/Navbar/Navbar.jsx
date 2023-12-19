@@ -141,7 +141,7 @@ const Navbar = (props) => {
                             Arana Jayavihan 🍃
                         </p>
                         <p className='p-text' style={{ textAlign: 'center' }}>
-                            Copyright @ 2022-2023
+                            {profile?.copyright}
                         </p>
                     </motion.div>
 

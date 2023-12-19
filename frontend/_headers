@@ -1,0 +1,15 @@
+/*
+  content-language: en
+  Access-Control-Allow-Credentials: true
+  Access-Control-Allow-Methods: GET, POST
+  Cache-Control: max-age=31536000, immutable, stale-while-revalidate=86400
+  Access-Control-Allow-Origin: https://cdn.sanity.io
+  Cross-Origin-Embedder-Policy: false
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: microphone=(), geolocation=(), camera=(), picture-in-picture=(), execution-while-out-of-viewport=(), display-capture=()
+  Origin: https://resume-aranajayavihan.netlify.app/
+  Cross-Origin-Resource-Policy: cross-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src https://resume-aranajayavihan.netlify.app; style-src 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://resume-aranajayavihan.netlify.app; font-src https://fonts.googleapis.com https://fonts.gstatic.com; manifest-src 'self'; media-src 'self'; img-src 'self' https://cdn.sanity.io ; connect-src https://resume-aranajayavihan.netlify.app https://28upnais.apicdn.sanity.io https://28upnais.api.sanity.io; object-src 'self';  frame-src 'self';
